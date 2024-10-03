@@ -1,17 +1,21 @@
 import { Step } from "../types/progress";
 //import { useState } from "react";
 
-const ProgressBar = (props: Step[]) => {
+interface ProgressInterface {
+  props: Step[];
+}
+
+const ProgressBar: React.FC<ProgressInterface> = (props) => {
   //const [progress, setProgress] = useState(props);
   return (
-    <div className="flex justify-between w-full">
-      {props.map((step) => {
+    <div className="flex justify-between w-full h-5">
+      {props.props.map((step, index) => {
         if (step.isDone) {
-          return <div className="h-1 bg-gray-900"></div>;
+          return <div className="h-2 bg-gray-900" key={index}></div>;
         } else if (step.isActive) {
-          return <div className="h-1 bg-red-500"></div>;
+          return <div className="h-2 bg-red-500" key={index}></div>;
         } else {
-          return <div className="h-1 bg-gray-500"></div>;
+          return <div className="h-2 bg-gray-500" key={index}></div>;
         }
       })}
     </div>
