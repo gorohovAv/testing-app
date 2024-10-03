@@ -1,11 +1,16 @@
-import Question from "./Question";
-import ProgressBar from "./ProgressBar";
+//import Question from "./Question";
+//import ProgressBar from "./ProgressBar";
+import Timer from "./Timer";
 
 const Test = () => {
   return (
     <>
-      <ProgressBar></ProgressBar>
-      <Question></Question>
+      <header className="flex flex-row m-0">
+        <div className="text-4xl inline m-0">Название теста</div>
+        <Timer initialSeconds={300}></Timer>
+      </header>
+      {/*<ProgressBar props={[]}></ProgressBar>
+      <Question></Question>*/}
     </>
   );
 };
